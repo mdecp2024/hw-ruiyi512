@@ -143,12 +143,81 @@ img.add_border {
         </header>
     <div id="tipue_search_content">w10 << <a href='w10.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w11</h1>
 <p><strong>11x11 的字元區域中, 以 "*" 字元列印出圓型區域. </strong></p>
-<p><span style="color: #000000;"><a href="https://fictional-happiness-wr7r5756xr73gvvj-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/3b4894311aeadc71420646d3aef05e3a/raw/06a704e97a279ef047053bbefeedd3ef61ae38fb/Round*" style="color: #000000;">Round</a></span></p>
+<p><span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/3b4894311aeadc71420646d3aef05e3a/raw/06a704e97a279ef047053bbefeedd3ef61ae38fb/Round*" style="color: #000000;">Round</a></span></p>
 <p><strong><span style="color: #000000;">改進</span></strong></p>
-<p><span style="color: #000000;"><a href="https://fictional-happiness-wr7r5756xr73gvvj-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/e4885adb8d17151ba7900a421e84bc27/raw/0c83d446dac343edb24469c38a520fbf8ba8f093/Round2*" style="color: #000000;">Round2</a></span></p>
+<p><span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/e4885adb8d17151ba7900a421e84bc27/raw/0c83d446dac343edb24469c38a520fbf8ba8f093/Round2*" style="color: #000000;">Round2</a></span></p>
 <p><strong><span style="color: #000000;">像素繪製圓形</span></strong></p>
-<p><span style="color: #000000;"><a class="wb-break-all" href="https://fictional-happiness-wr7r5756xr73gvvj-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/da49c34230837f3ca1154decec0779a6/raw/65e8ee02304222b40b2c47eac94951c3ecff2100/Pixel%2520drawing%2520circle_0" style="color: #000000;">Pixel drawing circle_0</a></span></p>
-<p><a href="https://fictional-happiness-wr7r5756xr73gvvj-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/e4885adb8d17151ba7900a421e84bc27/raw/0c83d446dac343edb24469c38a520fbf8ba8f093/Round2*"></a></p>
+<p><span style="color: #000000;"><a class="wb-break-all" href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/da49c34230837f3ca1154decec0779a6/raw/65e8ee02304222b40b2c47eac94951c3ecff2100/Pixel%2520drawing%2520circle_0" style="color: #000000;">Pixel drawing circle_0</a></span></p>
+<p><br/><a href="https://fictional-happiness-wr7r5756xr73gvvj-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/e4885adb8d17151ba7900a421e84bc27/raw/0c83d446dac343edb24469c38a520fbf8ba8f093/Round2*"></a></p>
+<p><strong>解題過程與心得</strong></p>
+<hr/>
+<h4><strong>解題過程</strong></h4>
+<ol>
+<li>
+<p><strong>需求分析</strong><br/>初始目標是根據使用者的要求，使用 Brython 在 HTML 中實現一個可以互動繪圖的功能，具體需求如下：</p>
+<ul>
+<li>繪製圓形，提供更細緻、更圓潤的效果。</li>
+<li>增加控制功能：可以動態調整格數、圓形的大小、位置和顏色。</li>
+<li>增加按鈕執行的功能，讓用戶操作更加便捷。</li>
+</ul>
+</li>
+<li>
+<p><strong>功能拆解</strong></p>
+<ul>
+<li><strong>網格繪製</strong>：基於使用者指定的格數，實現畫布的動態網格化。</li>
+<li><strong>圓形繪製</strong>：通過數學計算點與圓心的距離，實現圓形內部填充與邊緣漸變效果。</li>
+<li><strong>顏色控制</strong>：添加顏色選擇器，通過 HEX 顏色轉換為 RGB 處理。</li>
+<li><strong>互動功能</strong>：允許使用者點擊畫布或者輸入參數後執行畫圖。</li>
+<li><strong>重繪功能</strong>：設置初始化按鈕，方便使用者清除畫布並重新配置。</li>
+</ul>
+</li>
+<li>
+<p><strong>程式撰寫</strong></p>
+<ul>
+<li>利用 Brython 實現畫布的繪圖邏輯，結合 HTML 的輸入框和按鈕構建互動式界面。</li>
+<li>通過 <code>fill</code> 函數處理每個格子的位置與顏色，確保繪製圓形時邊緣更加平滑。</li>
+<li>利用 Python 的邏輯控制流程來動態繪製圓形和重設畫布。</li>
+</ul>
+</li>
+<li>
+<p><strong>測試與優化</strong></p>
+<ul>
+<li>測試畫布的邊界行為，確保圓形在邊緣不會超出可視範圍。</li>
+<li>調整網格格數（5 至 50），驗證在不同分辨率下的圓形渲染效果。</li>
+<li>優化按鈕與輸入框的交互流程，讓界面操作更加直觀。</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4><strong>心得</strong></h4>
+<ol>
+<li>
+<p><strong>挑戰</strong><br/>在限制條件下，要用 11x11 或更小的像素網格生成圓形，考驗了如何利用數學計算來處理邊緣的平滑度與透明度。需要對圓的方程式和漸變邏輯進行多次調整。</p>
+</li>
+<li>
+<p><strong>解決方案</strong></p>
+<ul>
+<li>引入 <code>rgba</code> 通道實現透明度處理，使得圓形的邊緣漸變更自然。</li>
+<li>設置靈活的參數輸入功能（如格數、顏色、圓心座標），增加了程式的泛用性。</li>
+</ul>
+</li>
+<li>
+<p><strong>學習收穫</strong></p>
+<ul>
+<li>掌握了 Brython 與 HTML 元件的結合使用，特別是在互動界面設計上的應用。</li>
+<li>深化了對幾何學的理解，尤其是圓形的數學描述和像素化渲染原理。</li>
+<li>瞭解了如何使用顏色模型進行動態圖形處理，讓程式具備更高的可玩性和用戶體驗。</li>
+</ul>
+</li>
+<li>
+<p><strong>下一步優化方向</strong></p>
+<ul>
+<li>增加更高階的幾何圖形支持，例如橢圓、多邊形等。</li>
+<li>引入滑桿或拖拽功能，讓使用者直接通過拖動滑桿調整參數值，進一步提升操作體驗。</li>
+<li>優化畫布效能，支持更大範圍的格數與畫布尺寸。</li>
+</ul>
+</li>
+</ol>
 <p><span></span></p>
 <p><span></span></p>
 <br />w10 << <a href='w10.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
