@@ -203,11 +203,18 @@ brython_div = doc["brython_div1"]
 brython_div <= canvas
 ctx = canvas.getContext("2d")
 
-ctx.lineWidth = 1
-ctx.strokeStyle = 'blue'
+# 繪製兩個矩形
+ctx.strokeStyle = 'red'  # 設定矩形顏色為紅色
+ctx.beginPath() 
+ctx.rect(10, 10, 200, 200)
+ctx.rect(110, 110, 200, 200)
+ctx.stroke()
+
+# 繪製對角線，顏色設定為藍色
+ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
 ctx.beginPath() 
 ctx.moveTo(10, 10)
-ctx.lineTo(100, 100)
+ctx.lineTo(210, 210)
 ctx.stroke()
 </script>
 </p><h1>HW 2</h1>
