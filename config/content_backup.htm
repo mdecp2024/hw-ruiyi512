@@ -183,41 +183,147 @@
 <p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
+<!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
 </p>
-<!-- 啟動 Brython -->
+<p><!-- 啟動 Brython --></p>
 <p>
 <script>
 window.onload=function(){
 brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
 }
 </script>
+</p>
+<div id="brython_div1"></div>
+<p>
 <script type="text/python3">
 from browser import html
 from browser import document as doc
+import math
+  
+# 創建畫布
+def create_canvas():
+    # 創建一個500x500像素的畫布
+    canvas = html.CANVAS(width=500, height=500)
+    # 獲取ID為"brython_div1"的容器
+    brython_div = doc["brython_div1"]
+    # 將畫布添加到容器中
+    brython_div <= canvas
+    return canvas
 
-# 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width=400, height=400)
-brython_div = doc["brython_div1"]
-brython_div <= canvas
+# 在畫布上繪圖
+def draw_shapes(canvas):
+    # 獲取2D繪圖上下文
+    ctx = canvas.getContext("2d")
+    # 設置所有圖形的線條寬度
+    ctx.lineWidth = 4
 
-ctx = canvas.getContext("2d")
-ctx.lineWidth = 1
+    # 設置混合模式為"screen"，用於顏色混合
+    ctx.globalCompositeOperation = "screen"
 
-# 繪製兩個矩形
-ctx.strokeStyle = 'red'  # 設定矩形顏色為紅色
-ctx.beginPath() 
-ctx.rect(10, 10, 200, 200)
-ctx.rect(110, 110, 200, 200)
-ctx.stroke()
+    # 黑色邊框的圓形（每個有四個部分）
+    ctx.strokeStyle = 'black'
 
-# 繪製對角線，顏色設定為藍色
-ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
-ctx.beginPath() 
-ctx.moveTo(10, 10)
-ctx.lineTo(210, 210)
-ctx.stroke()
+    # 第一個圓形
+    colors1 = ["Turquoise", "Tomato", "SpringGreen", "FloralWhite"]
+    angles1 = [
+        (0.25 * math.pi, 0.75 * math.pi),  # 第1部分
+        (0.75 * math.pi, 1.25 * math.pi),  # 第2部分
+        (1.25 * math.pi, 1.75 * math.pi),  # 第3部分
+        (1.75 * math.pi, 0.25 * math.pi),  # 第4部分
+    ]
+
+    for i in range(4):
+        # 繪製第一個圓形的每個部分
+        ctx.beginPath()
+        ctx.arc(160, 160, 141, angles1[i][0], angles1[i][1])
+        ctx.fillStyle = colors1[i]  # 設置填充顏色
+        ctx.fill()
+        ctx.stroke()  # 描繪部分的邊框
+
+    # 第二個圓形
+    colors2 = ["Purple", "OliveDrab", "Orange", "MediumVioletRed"]
+    angles2 = [
+        (1.25 * math.pi, 1.75 * math.pi),  # 第1部分
+        (1.75 * math.pi, 0.25 * math.pi),  # 第2部分
+        (0.25 * math.pi, 0.75 * math.pi),  # 第3部分
+        (0.75 * math.pi, 1.25 * math.pi),  # 第4部分
+    ]
+
+    for i in range(4):
+        # 繪製第二個圓形的每個部分
+        ctx.beginPath()
+        ctx.arc(260, 260, 141, angles2[i][0], angles2[i][1])
+        ctx.fillStyle = colors2[i]  # 設置填充顏色
+        ctx.fill()
+        ctx.stroke()  # 描繪部分的邊框
+
+    # 兩個方形中的紅色三角形
+    ctx.strokeStyle = 'red'
+
+    # 第一個方形
+    coords1 = [
+        ((60, 60), (60, 260), (260, 260), "Gold"),  # 第一個三角形
+        ((60, 60), (260, 60), (260, 260), "Indigo"),  # 第二個三角形
+    ]
+
+    for coord in coords1:
+        # 繪製第一個方形中的每個三角形
+        ctx.beginPath()
+        ctx.moveTo(*coord[0])  # 移動到第一個頂點
+        ctx.lineTo(*coord[1])  # 繪製到第二個頂點
+        ctx.lineTo(*coord[2])  # 繪製到第三個頂點
+        ctx.fillStyle = coord[3]  # 設置填充顏色
+        ctx.fill()
+        ctx.stroke()  # 描繪三角形的邊框
+
+    # 第二個方形
+    coords2 = [
+        ((160, 160), (360, 160), (360, 360), "Cyan"),  # 第一個三角形
+        ((160, 160), (160, 360), (360, 360), "SpringGreen"),  # 第二個三角形
+    ]
+
+    for coord in coords2:
+        # 繪製第二個方形中的每個三角形
+        ctx.beginPath()
+        ctx.moveTo(*coord[0])  # 移動到第一個頂點
+        ctx.lineTo(*coord[1])  # 繪製到第二個頂點
+        ctx.lineTo(*coord[2])  # 繪製到第三個頂點
+        ctx.fillStyle = coord[3]  # 設置填充顏色
+        ctx.fill()
+        ctx.stroke()  # 描繪三角形的邊框
+
+    # 重疊的小方形
+    coords3 = [
+        ((160, 160), (160, 260), (260, 260), "Turquoise"),  # 第一個三角形
+        ((160, 160), (260, 160), (260, 260), "SlateBlue"),  # 第二個三角形
+    ]
+
+    for coord in coords3:
+        # 繪製小方形中的每個三角形
+        ctx.beginPath()
+        ctx.moveTo(*coord[0])  # 移動到第一個頂點
+        ctx.lineTo(*coord[1])  # 繪製到第二個頂點
+        ctx.lineTo(*coord[2])  # 繪製到第三個頂點
+        ctx.fillStyle = coord[3]  # 設置填充顏色
+        ctx.fill()
+        ctx.stroke()  # 描繪三角形的邊框
+
+    # 藍色對角線
+    ctx.strokeStyle = 'blue'
+    ctx.beginPath()
+    ctx.moveTo(60, 60)  # 線條的起點
+    ctx.lineTo(260, 260)  # 線條的終點
+    ctx.stroke()
+
+# 主執行部分
+canvas = create_canvas()  # 創建畫布
+draw_shapes(canvas)  # 繪製所有圖形
 </script>
-</p><h1>HW 2</h1>
+</p>
+<p># 創建畫布 def create_canvas(): # 創建一個500x500像素的畫布 canvas = html.CANVAS(width=500, height=500) # 獲取ID為"brython_div1"的容器 brython_div = doc["brython_div1"] # 將畫布添加到容器中 brython_div &lt;= canvas return canvas # 在畫布上繪圖 def draw_shapes(canvas): # 獲取2D繪圖上下文 ctx = canvas.getContext("2d") # 設置所有圖形的線條寬度 ctx.lineWidth = 4 # 設置混合模式為"screen"，用於顏色混合 ctx.globalCompositeOperation = "screen" # 黑色邊框的圓形（每個有四個部分） ctx.strokeStyle = 'black' # 第一個圓形 colors1 = ["Turquoise", "Tomato", "SpringGreen", "FloralWhite"] angles1 = [ (0.25 * math.pi, 0.75 * math.pi), # 第1部分 (0.75 * math.pi, 1.25 * math.pi), # 第2部分 (1.25 * math.pi, 1.75 * math.pi), # 第3部分 (1.75 * math.pi, 0.25 * math.pi), # 第4部分 ] for i in range(4): # 繪製第一個圓形的每個部分 ctx.beginPath() ctx.arc(160, 160, 141, angles1[i][0], angles1[i][1]) ctx.fillStyle = colors1[i] # 設置填充顏色 ctx.fill() ctx.stroke() # 描繪部分的邊框 # 第二個圓形 colors2 = ["Purple", "OliveDrab", "Orange", "MediumVioletRed"] angles2 = [ (1.25 * math.pi, 1.75 * math.pi), # 第1部分 (1.75 * math.pi, 0.25 * math.pi), # 第2部分 (0.25 * math.pi, 0.75 * math.pi), # 第3部分 (0.75 * math.pi, 1.25 * math.pi), # 第4部分 ] for i in range(4): # 繪製第二個圓形的每個部分 ctx.beginPath() ctx.arc(260, 260, 141, angles2[i][0], angles2[i][1]) ctx.fillStyle = colors2[i] # 設置填充顏色 ctx.fill() ctx.stroke() # 描繪部分的邊框 # 兩個方形中的紅色三角形 ctx.strokeStyle = 'red' # 第一個方形 coords1 = [ ((60, 60), (60, 260), (260, 260), "Gold"), # 第一個三角形 ((60, 60), (260, 60), (260, 260), "Indigo"), # 第二個三角形 ] for coord in coords1: # 繪製第一個方形中的每個三角形 ctx.beginPath() ctx.moveTo(*coord[0]) # 移動到第一個頂點 ctx.lineTo(*coord[1]) # 繪製到第二個頂點 ctx.lineTo(*coord[2]) # 繪製到第三個頂點 ctx.fillStyle = coord[3] # 設置填充顏色 ctx.fill() ctx.stroke() # 描繪三角形的邊框 # 第二個方形 coords2 = [ ((160, 160), (360, 160), (360, 360), "Cyan"), # 第一個三角形 ((160, 160), (160, 360), (360, 360), "SpringGreen"), # 第二個三角形 ] for coord in coords2: # 繪製第二個方形中的每個三角形 ctx.beginPath() ctx.moveTo(*coord[0]) # 移動到第一個頂點 ctx.lineTo(*coord[1]) # 繪製到第二個頂點 ctx.lineTo(*coord[2]) # 繪製到第三個頂點 ctx.fillStyle = coord[3] # 設置填充顏色 ctx.fill() ctx.stroke() # 描繪三角形的邊框 # 重疊的小方形 coords3 = [ ((160, 160), (160, 260), (260, 260), "Turquoise"), # 第一個三角形 ((160, 160), (260, 160), (260, 260), "SlateBlue"), # 第二個三角形 ] for coord in coords3: # 繪製小方形中的每個三角形 ctx.beginPath() ctx.moveTo(*coord[0]) # 移動到第一個頂點 ctx.lineTo(*coord[1]) # 繪製到第二個頂點 ctx.lineTo(*coord[2]) # 繪製到第三個頂點 ctx.fillStyle = coord[3] # 設置填充顏色 ctx.fill() ctx.stroke() # 描繪三角形的邊框 # 藍色對角線 ctx.strokeStyle = 'blue' ctx.beginPath() ctx.moveTo(60, 60) # 線條的起點 ctx.lineTo(260, 260) # 線條的終點 ctx.stroke() # 主執行部分 canvas = create_canvas() # 創建畫布 draw_shapes(canvas) # 繪製所有圖形</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
