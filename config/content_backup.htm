@@ -172,7 +172,7 @@
 <p><span style="text-decoration: underline;"><span style="color: #000000; text-decoration: underline;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/25c390f19d4f9b2eb2defe3ca7981ae4/raw/c80465dd55062984ff020556654b4d73edd6c05c/w12_3" style="color: #000000; text-decoration: underline;">w12_3</a></span></span></p>
 <p><span style="text-decoration: underline;"><span style="color: #000000; text-decoration: underline;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/45da7bf5ebd3ca39471ca049acc8ab5c/raw/c73db38604f5573881ccc4d7fac1fd595aa859b0/w12_4" style="color: #000000; text-decoration: underline;">w12_4</a></span></span></p>
 <p><span style="text-decoration: underline;"><span style="color: #000000; text-decoration: underline;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/88b37bb3a757b64a6b8a621c103420d7/raw/46381a65d6dcfa14222439f41b865f4c358ac755/w12_5" style="color: #000000; text-decoration: underline;">w12_5</a></span></span></p>
-<p><span style="text-decoration: underline;"><span style="color: #000000; text-decoration: underline;"></span>w12_6</span></p>
+<p><span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/44d869b90a433bf15866cfca779ef98a/raw/6b222250fe15249c1eb441e0fb68502560155f42/w12_6" style="color: #000000;">w12_6</a></span></p>
 <p><span style="text-decoration: underline;">w12_7</span></p>
 <p><span style="text-decoration: underline;">w12_8</span></p>
 <p><span style="text-decoration: underline;">w12_9</span></p>
@@ -333,7 +333,6 @@ draw_shapes(canvas)  # 繪製所有圖形
 <li>return canvas: 返回建立的畫布對象。</li>
 </ul>
 <p><strong>畫圖函式</strong></p>
-<p><strong></strong></p>
 <ul>
 <li>定義 <code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">draw_shapes</code>，接收畫布作為參數。</li>
 <li><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx = canvas.getContext("2d")</code>: 獲取 2D 繪圖上下文，用於畫圖。</li>
@@ -344,7 +343,6 @@ draw_shapes(canvas)  # 繪製所有圖形
 <li><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.globalCompositeOperation = "screen"</code>: 設定混合模式為 <code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">screen</code>，用於實現顏色混合效果。</li>
 </ul>
 <p><strong>繪製第一個圓形</strong></p>
-<p><strong></strong></p>
 <ul>
 <li data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453"><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.strokeStyle = 'black'</code>: 設定圓形邊框顏色為黑色。</li>
 <li data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">定義 <code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">colors1</code> 和 <code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">angles1</code>，分別表示每個圓弧的顏色和起止角度。</li>
@@ -367,10 +365,107 @@ draw_shapes(canvas)  # 繪製所有圖形
 <li data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453"><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.fillStyle = coord[3]</code>: 設定三角形填充顏色。</li>
 <li data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453"><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.fill()</code> 和 <code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.stroke()</code>: 填充與描邊。</li>
 </ul>
-<p><strong></strong></p>
-<p></p>
-<p></p>
-<p></p><h1>HW 2</h1>
+<h3>w14_hw</h3>
+<p><!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p><!-- 啟動 Brython --></p>
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import random
+import math
+
+# 定義一個函式來初始化畫布
+def initialize_canvas(canvas_width=1000, canvas_height=1000, id="brython_div1"):
+    """
+    初始化畫布，創建一個指定大小的 Canvas 元素，並將其加到 HTML 文件中。
+    返回畫布元素和它的 2D 繪圖上下文。
+    """
+    canvas = html.CANVAS(width=canvas_width, height=canvas_height)
+    brython_div = doc[id]
+    brython_div <= canvas
+    ctx = canvas.getContext("2d")
+    return canvas, ctx
+
+# 定義一個隨機顏色生成函式
+def random_color_generator():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return f"rgb({r}, {g}, {b})"
+
+# 判斷點是否在圓內
+def is_point_in_circle(px, py, cx, cy, r):
+    return (px - cx) ** 2 + (py - cy) ** 2 <= r ** 2
+
+# 檢查所有圓是否有重疊
+def ensure_no_isolated_circles(circles):
+    overlap = [False] * len(circles)
+    for i in range(len(circles)):
+        for j in range(i + 1, len(circles)):
+            cx1, cy1, r1 = circles[i]
+            cx2, cy2, r2 = circles[j]
+            distance = math.sqrt((cx1 - cx2) ** 2 + (cy1 - cy2) ** 2)
+            if distance <= r1 + r2:  # 判斷是否有重疊
+                overlap[i] = True
+                overlap[j] = True
+    return all(overlap)
+
+# 使用者設定的多個圓，並進行掃描線填充
+def draw_circles():
+    canvas, ctx = initialize_canvas(400, 400)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    color_dict = {}
+
+    # 隨機生成 5 到 10 個圓，確保沒有圓是孤立的
+    while True:
+        num_circles = random.randint(5, 10)
+        circles = [
+            (random.randint(50, 350), random.randint(50, 350), random.randint(50, 100))
+            for _ in range(num_circles)
+        ]
+        if ensure_no_isolated_circles(circles):
+            break
+
+    for py in range(0, canvas.height):
+        for px in range(0, canvas.width):
+            overlapping_indices = []
+
+            for i, (cx, cy, r) in enumerate(circles):
+                if is_point_in_circle(px, py, cx, cy, r):
+                    overlapping_indices.append(i)
+
+            if overlapping_indices:
+                overlap_key = "_".join(map(str, sorted(overlapping_indices)))
+                if overlap_key not in color_dict:
+                    color_dict[overlap_key] = random_color_generator()
+                current_color = color_dict[overlap_key]
+            else:
+                current_color = "white"
+
+            ctx.fillStyle = current_color
+            ctx.fillRect(px, py, 1, 1)
+
+draw_circles()
+</script>
+</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
