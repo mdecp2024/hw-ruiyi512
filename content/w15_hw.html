@@ -141,86 +141,106 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w10 << <a href='w10.html'>Previous</a> <a href='w12_hw.html'>Next</a> >> w12_hw<br /><h1>w11_hw</h1>
-<p><strong>11x11 的字元區域中, 以 "*" 字元列印出圓型區域. </strong></p>
-<p><span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/3b4894311aeadc71420646d3aef05e3a/raw/06a704e97a279ef047053bbefeedd3ef61ae38fb/Round*" style="color: #000000;">Round</a></span></p>
-<p><strong><span style="color: #000000;">改進</span></strong></p>
-<p><span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/e4885adb8d17151ba7900a421e84bc27/raw/0c83d446dac343edb24469c38a520fbf8ba8f093/Round2*" style="color: #000000;">Round2</a></span></p>
-<p><strong><span style="color: #000000;">像素繪製圓形</span></strong></p>
-<p><span style="color: #000000;"><a class="wb-break-all" href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/a9d8b74100c43e1e289f2387ac261af3/raw/81207ab3e8ab341a0a7df7de488b44de4de37632/Pixel%2520drawing%2520circle_1" style="color: #000000;">Pixel drawing circle_1</a></span></p>
-<p><br/><a href="https://fictional-happiness-wr7r5756xr73gvvj-8081.app.github.dev/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/e4885adb8d17151ba7900a421e84bc27/raw/0c83d446dac343edb24469c38a520fbf8ba8f093/Round2*"></a></p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/_qymVrxNuwg" width="560"></iframe></p>
-<p></p>
-<p><strong>解題過程與心得</strong></p>
-<hr/>
-<h4><strong>解題過程</strong></h4>
-<ol>
-<li>
-<p><strong>需求分析</strong><br/>初始目標是根據使用者的要求，使用 Brython 在 HTML 中實現一個可以互動繪圖的功能，具體需求如下：</p>
-<ul>
-<li>繪製圓形，提供更細緻、更圓潤的效果。</li>
-<li>增加控制功能：可以動態調整格數、圓形的大小、位置和顏色。</li>
-<li>增加按鈕執行的功能，讓用戶操作更加便捷。</li>
-</ul>
-</li>
-<li>
-<p><strong>功能拆解</strong></p>
-<ul>
-<li><strong>網格繪製</strong>：基於使用者指定的格數，實現畫布的動態網格化。</li>
-<li><strong>圓形繪製</strong>：通過數學計算點與圓心的距離，實現圓形內部填充與邊緣漸變效果。</li>
-<li><strong>顏色控制</strong>：添加顏色選擇器，通過 HEX 顏色轉換為 RGB 處理。</li>
-<li><strong>互動功能</strong>：允許使用者點擊畫布或者輸入參數後執行畫圖。</li>
-<li><strong>重繪功能</strong>：設置初始化按鈕，方便使用者清除畫布並重新配置。</li>
-</ul>
-</li>
-<li>
-<p><strong>程式撰寫</strong></p>
-<ul>
-<li>利用 Brython 實現畫布的繪圖邏輯，結合 HTML 的輸入框和按鈕構建互動式界面。</li>
-<li>通過 <code>fill</code> 函數處理每個格子的位置與顏色，確保繪製圓形時邊緣更加平滑。</li>
-<li>利用 Python 的邏輯控制流程來動態繪製圓形和重設畫布。</li>
-</ul>
-</li>
-<li>
-<p><strong>測試與優化</strong></p>
-<ul>
-<li>測試畫布的邊界行為，確保圓形在邊緣不會超出可視範圍。</li>
-<li>調整網格格數（5 至 50），驗證在不同分辨率下的圓形渲染效果。</li>
-<li>優化按鈕與輸入框的交互流程，讓界面操作更加直觀。</li>
-</ul>
-</li>
-</ol>
-<hr/>
-<h4><strong>心得</strong></h4>
-<ol>
-<li>
-<p><strong>挑戰</strong><br/>在限制條件下，要用 11x11 或更小的像素網格生成圓形，考驗了如何利用數學計算來處理邊緣的平滑度與透明度。需要對圓的方程式和漸變邏輯進行多次調整。</p>
-</li>
-<li>
-<p><strong>解決方案</strong></p>
-<ul>
-<li>引入 <code>rgba</code> 通道實現透明度處理，使得圓形的邊緣漸變更自然。</li>
-<li>設置靈活的參數輸入功能（如格數、顏色、圓心座標），增加了程式的泛用性。</li>
-</ul>
-</li>
-<li>
-<p><strong>學習收穫</strong></p>
-<ul>
-<li>掌握了 Brython 與 HTML 元件的結合使用，特別是在互動界面設計上的應用。</li>
-<li>深化了對幾何學的理解，尤其是圓形的數學描述和像素化渲染原理。</li>
-<li>瞭解了如何使用顏色模型進行動態圖形處理，讓程式具備更高的可玩性和用戶體驗。</li>
-</ul>
-</li>
-<li>
-<p><strong>下一步優化方向</strong></p>
-<ul>
-<li>增加更高階的幾何圖形支持，例如橢圓、多邊形等。</li>
-<li>引入滑桿或拖拽功能，讓使用者直接通過拖動滑桿調整參數值，進一步提升操作體驗。</li>
-<li>優化畫布效能，支持更大範圍的格數與畫布尺寸。</li>
-</ul>
-</li>
-</ol>
-<p><span></span></p><br />w10 << <a href='w10.html'>Previous</a> <a href='w12_hw.html'>Next</a> >> w12_hw</div>
+    <div id="tipue_search_content">w15 << <a href='w15.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15_hw</h1>
+<p><!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p><!-- 啟動 Brython --></p>
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import random
+import math
+
+# 定義一個函式來初始化畫布
+def initialize_canvas(canvas_width=400, canvas_height=400, id="brython_div1"):
+    """
+    初始化畫布，創建一個指定大小的 Canvas 元素，並將其加到 HTML 文件中。
+    返回畫布元素和它的 2D 繪圖上下文。
+    """
+    canvas = html.CANVAS(width=canvas_width, height=canvas_height)
+    brython_div = doc[id]
+    brython_div <= canvas
+    ctx = canvas.getContext("2d")
+    return canvas, ctx
+
+# 定義一個隨機顏色生成函式
+def random_color_generator():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return f"rgb({r}, {g}, {b})"
+
+# 判斷點是否在圓內
+def is_point_in_circle(px, py, cx, cy, r):
+    return (px - cx) ** 2 + (py - cy) ** 2 <= r ** 2
+
+# 檢查所有圓是否有重疊
+def ensure_no_isolated_circles(circles):
+    overlap = [False] * len(circles)
+    for i in range(len(circles)):
+        for j in range(i + 1, len(circles)):
+            cx1, cy1, r1 = circles[i]
+            cx2, cy2, r2 = circles[j]
+            distance = math.sqrt((cx1 - cx2) ** 2 + (cy1 - cy2) ** 2)
+            if distance <= r1 + r2:  # 判斷是否有重疊
+                overlap[i] = True
+                overlap[j] = True
+    return all(overlap)
+
+# 使用者設定的多個圓，並進行掃描線填充
+def draw_circles():
+    canvas, ctx = initialize_canvas(400, 400)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    color_dict = {}
+
+    # 隨機生成 5 到 10 個圓，確保沒有圓是孤立的
+    while True:
+        num_circles = random.randint(5, 10)
+        circles = [
+            (random.randint(50, 350), random.randint(50, 350), random.randint(50, 100))
+            for _ in range(num_circles)
+        ]
+        if ensure_no_isolated_circles(circles):
+            break
+
+    for py in range(0, canvas.height):
+        for px in range(0, canvas.width):
+            overlapping_indices = []
+
+            for i, (cx, cy, r) in enumerate(circles):
+                if is_point_in_circle(px, py, cx, cy, r):
+                    overlapping_indices.append(i)
+
+            if overlapping_indices:
+                overlap_key = "_".join(map(str, sorted(overlapping_indices)))
+                if overlap_key not in color_dict:
+                    color_dict[overlap_key] = random_color_generator()
+                current_color = color_dict[overlap_key]
+            else:
+                current_color = "white"
+
+            ctx.fillStyle = current_color
+            ctx.fillRect(px, py, 1, 1)
+
+draw_circles()
+</script>
+</p><br />w15 << <a href='w15.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
