@@ -144,6 +144,43 @@ img.add_border {
     <div id="tipue_search_content">w14_hw << <a href='w14_hw.html'>Previous</a> <a href='w15_hw.html'>Next</a> >> w15_hw<br /><h1>w15</h1>
 <p>1.<a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/d4d5a79327330292becc5d1a8491ae82/raw/f724f59fe843a1e3c9e797b5c61f5f181bc3c3ee/w15_1" style="color: #000000;">從 1 累加到 100</a></p>
 <p>2.<span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/82168ff2979819c3450fdaa68e9f2047/raw/4e859b3a2710b5f867ba2a52fac442845dfbba5a/w15_2" style="color: #000000;">addto</a></span></p>
+<p>題目要求與設計思考</p>
+<p><strong>要求</strong>：設計一個函式 <code>addto(start, end)</code>，將從 <code>start</code> 累加到 <code>end</code> (包含 <code>end</code> 本身)。</p>
+<p><strong>設計思考</strong>：</p>
+<ol>
+<li>
+<p>Python 中累加整數區間最簡易的手法是使用 <code>range()</code> 函式生成序列，然後用 <code>sum()</code> 將其加總。</p>
+</li>
+<li>
+<p><code>range(start, end+1)</code> 會產生從 <code>start</code> 到 <code>end</code> 的所有整數值。</p>
+</li>
+<li>
+<p>最後將此序列直接套入 <code>sum()</code> 即可得到區間總和。</p>
+</li>
+</ol>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">"""addto"""
+def addto(start, end):
+    return sum(range(start, end + 1))
+
+# 範例呼叫
+result = addto(1, 100)
+print(result)  # 輸出 5050
+</pre>
+<p>程式碼逐行解說</p>
+<ul>
+<li>
+<p><code>def addto(start, end):</code><br/>定義一個函式名稱為 <code>addto</code>，有兩個參數 <code>start</code> 與 <code>end</code>，代表加總的起始值和結束值。</p>
+</li>
+<li>
+<p><code>return sum(range(start, end + 1))</code><br/><code>range(start, end+1)</code> 會產生從 <code>start</code> 到 <code>end</code> 的整數序列。例如 <code>range(1, 101)</code> 代表 1 到 100。<br/><code>sum(...)</code> 會將 <code>range()</code> 所產生的整數相加。<br/>使用 <code>return</code> 將計算結果回傳給呼叫端。</p>
+</li>
+<li>
+<p><code>result = addto(1, 100)</code><br/>呼叫 <code>addto(1, 100)</code>，會得到 1 加到 100 的總和結果，預期是 5050。</p>
+</li>
+<li>
+<p><code>print(result)</code><br/>將計算的結果印出來。</p>
+</li>
+</ul>
 <p><span style="color: #000000;">3.<a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/9809bd28083a84b5c2d61f64b2f70b8e/raw/e251207de65929233c630aec440be920b875ece0/w15_3" style="color: #000000;">add_only_even</a></span></p>
 <p><span style="color: #000000;">4.<a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/f0f58b1332fa369701354a2a213f5491/raw/369c0abe184155bb9d77cc2a4e9c3832dbc8fce6/w15_4" style="color: #000000;">add_avoid_8</a></span></p>
 <p></p><br />w14_hw << <a href='w14_hw.html'>Previous</a> <a href='w15_hw.html'>Next</a> >> w15_hw</div>
