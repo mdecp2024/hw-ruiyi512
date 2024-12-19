@@ -475,7 +475,137 @@ print(result)  # 將輸出 2 + 4 + 6 + ... + 100 的和
 <p><strong>執行結果與心得</strong></p>
 <p>執行後結果為 <code>2550</code>。這是 2 + 4 + 6 + ... + 100 的總和。<br/>過程中充分利用 <code>if</code> 條件與迴圈來篩選特定的值，對程式碼的控制流程很直覺明白。</p>
 <p><span style="color: #ff6600;">4.<a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/f0f58b1332fa369701354a2a213f5491/raw/369c0abe184155bb9d77cc2a4e9c3832dbc8fce6/w15_4" style="color: #ff6600;">add_avoid_8</a></span></p>
-<p></p><h3>w15_hw</h3>
+<p><strong>題目要求與設計思考</strong></p>
+<p><strong>要求</strong>：設計一個函式 <code>add_avoid_8(start, end)</code>，將從 <code>start</code> 累加到 <code>end</code>，但凡是數字中出現 <code>8</code> 這個數字都要避開 (不加到總和中)。</p>
+<p><strong>設計思考</strong>：</p>
+<ol>
+<li>
+<p>關鍵在於 "避開出現8的數字"。我們需對每個整數檢查其字串表現形式是否包含字元 <code>'8'</code>。</p>
+</li>
+<li>
+<p>將整數 <code>num</code> 轉成字串 <code>str(num)</code>，用 <code>'8' in str(num)</code> 來判斷是否包含8這個字元。</p>
+</li>
+<li>
+<p>若不包含 <code>8</code>，則將 <code>num</code> 累加。</p>
+</li>
+</ol>
+<p><strong>程式碼範例</strong></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
+    total = 0
+    for num in range(start, end + 1):
+        if '8' not in str(num):
+            total += num
+    return total
+
+result = add_avoid_8(1, 100)
+print(result)  # 預計會把所有帶有8的數字如 8, 18, 28, 38, 48, 58, 68, 78, 80~89, 98 排除
+</pre>
+<p><strong>程式碼逐行解說</strong></p>
+<ul>
+<li>
+<p><code>def add_avoid_8(start, end):</code><br/>定義函式名稱 <code>add_avoid_8</code>，有兩個參數 <code>start</code>、<code>end</code>。</p>
+</li>
+<li>
+<p><code>total = 0</code><br/>將累加用的變數初始化為0。</p>
+</li>
+<li>
+<p><code>for num in range(start, end + 1):</code><br/>對從 <code>start</code> 到 <code>end</code> 間的每一個整數 <code>num</code> 進行迭代。</p>
+</li>
+<li>
+<p><code>if '8' not in str(num):</code><br/>將 <code>num</code> 轉為字串後，檢查字串中是否包含 <code>8</code> 字元。<br/>若不包含，就表示此數字沒有出現數字「8」，符合條件。</p>
+</li>
+<li>
+<p><code>total += num</code><br/>若符合條件(不含8)，則將該 <code>num</code> 加入 <code>total</code>。</p>
+</li>
+<li>
+<p><code>return total</code><br/>迴圈執行完畢後，回傳最終的累加結果。</p>
+</li>
+<li>
+<p><code>result = add_avoid_8(1, 100)</code><br/>呼叫該函式，以計算 1 到 100 中不含數字8的整數加總。</p>
+</li>
+<li>
+<p><code>print(result)</code><br/>印出結果。</p>
+</li>
+</ul>
+<p><strong>執行結果與心得</strong></p>
+<p>執行後的結果會略小於 5050，因為移除了所有出現<code>8</code>的數字。<br/>這個題目顯示了如何透過字串判斷來排除特定條件的數字，拓展了對整數篩選的思考方式。<br/>實際執行後，可觀察結果，並藉此驗證程式碼邏輯的正確性，並可進一步測試其他範圍或條件。</p>
+<p>(若欲得知實際結果，可執行程式碼。大致上，移除8、18、28、...、98及80~89共計19個數字，即移除的總和約為8 + 18 + 28 + 38 + 48 + 58 + 68 + 78 + (80到89的十個數字) + 98。透過實際執行，可確認結果正確性。)</p>
+<p></p>
+<p><span style="color: #ff6600;"><strong>增加條件，避開 3 數字</strong></span></p>
+<p><strong>題目要求與設計思考</strong></p>
+<p><strong>要求</strong>：<br/>設計一個函式 <code>add_avoid_8(start, end)</code>，從 <code>start</code> 加到 <code>end</code> (包含 <code>end</code>)，但必須避開所有<strong>數字中包含 '8' 或 '3'</strong> 的整數，也就是說，只要該數字包含 '8' 或 '3' 字元，該數字就不納入加總。</p>
+<p><strong>設計思考</strong>：</p>
+<ol>
+<li>
+<p>原先範例中是檢查 <code>'8' not in str(num)</code> 決定是否跳過該數字。</p>
+</li>
+<li>
+<p>現在需要同時避開包含 '8' 與 '3' 的數字，因此條件需再加嚴格化，即檢查 <code>'8'</code> 與 <code>'3'</code> 都不在該數字字串中。</p>
+</li>
+<li>
+<p>可以利用 <code>if '8' not in str(num) and '3' not in str(num):</code> 來判斷該數字是否能納入加總。</p>
+</li>
+</ol>
+<p><strong>程式碼範例</strong></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
+    total = 0
+    for num in range(start, end + 1):
+        # 檢查該數字字串中是否同時不含 '8' 和 '3'
+        if '8' not in str(num) and '3' not in str(num):
+            total += num
+    return total
+
+# 範例呼叫
+result = add_avoid_8(1, 100)
+print(result)  # 將避開所有包含 '8' 或 '3' 的數字
+</pre>
+<p><strong>程式碼逐行解說</strong></p>
+<ul>
+<li>
+<p><code>def add_avoid_8(start, end):</code><br/>定義函式 <code>add_avoid_8</code>，接收兩個參數 <code>start</code> 與 <code>end</code>。</p>
+</li>
+<li>
+<p><code>total = 0</code><br/>初始化加總計數器為 0。</p>
+</li>
+<li>
+<p><code>for num in range(start, end + 1):</code><br/>使用 <code>range(start, end+1)</code> 來逐一取得從 <code>start</code> 到 <code>end</code> 的每個整數 <code>num</code>。</p>
+</li>
+<li>
+<p><code>if '8' not in str(num) and '3' not in str(num):</code><br/>將 <code>num</code> 轉成字串後檢查：</p>
+<ul>
+<li>
+<p><code>'8' not in str(num)</code>：字串中不包含 '8'</p>
+</li>
+<li>
+<p><code>'3' not in str(num)</code>：字串中不包含 '3'</p>
+<p>同時成立，表示該數字中不包含 8 與 3，符合納入加總的條件。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><code>total += num</code><br/>若通過篩選條件，將該數值累加到 <code>total</code> 中。</p>
+</li>
+<li>
+<p><code>return total</code><br/>當所有數字都檢視完後，回傳最終加總結果。</p>
+</li>
+<li>
+<p><code>result = add_avoid_8(1, 100)</code><br/>呼叫函式以計算從 1 到 100，避開包含 '8' 或 '3' 的數字之和。</p>
+</li>
+<li>
+<p><code>print(result)</code><br/>印出計算結果。</p>
+</li>
+</ul>
+<p><strong>執行結果與心得</strong></p>
+<p>這樣的條件更嚴格，會在 <code>1 ~ 100</code> 中排除任何含有 '8' 或 '3' 的整數，例如：</p>
+<ul>
+<li>
+<p>所有帶有 '3' 的整數 (3, 13, 23, 30~39, 43, 53, 63, 73, 83, 93)</p>
+</li>
+<li>
+<p>所有帶有 '8' 的整數 (8, 18, 28, 38, 48, 58, 68, 78, 80~89, 98)</p>
+</li>
+</ul>
+<p>執行後的結果會小於前面只避開 '8' 的版本。此範例更進一步演示了如何利用字串檢查的方法，同時排除多個條件。透過此練習，可以在需求變動下輕鬆地修改判斷條件以達成新要求。</p>
 <p><!-- 導入 brython 程式庫 --></p>
 <p>
 <script src="/static/brython.js"></script>
