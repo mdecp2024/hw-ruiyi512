@@ -367,7 +367,6 @@ draw_shapes(canvas)  # 繪製所有圖形
 <li data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453"><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.fillStyle = coord[3]</code>: 設定三角形填充顏色。</li>
 <li data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453"><code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.fill()</code> 和 <code data-immersive-translate-walked="c1c06eaf-be74-42cb-bb45-adbb897f5453">ctx.stroke()</code>: 填充與描邊。</li>
 </ul>
-<h3>w14_hw</h3>
 <h3>w15</h3>
 <p><span style="color: #ff6600;">1.<a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/d4d5a79327330292becc5d1a8491ae82/raw/f724f59fe843a1e3c9e797b5c61f5f181bc3c3ee/w15_1" style="color: #ff6600;">從 1 累加到 100</a></span></p>
 <p><span style="color: #ff6600;">2.<a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/82168ff2979819c3450fdaa68e9f2047/raw/4e859b3a2710b5f867ba2a52fac442845dfbba5a/w15_2" style="color: #ff6600;">addto</a></span></p>
@@ -716,14 +715,98 @@ draw_circles()
 <h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 3</h1>
+<p></p>
+<p>w16_exam1</p>
+<!-- 導入 brython 程式庫 (路徑請依實際專案需求調整) -->
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 也可再次載入 (若上面有 /get_page/... 之類路徑) -->
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+<!-- 啟動 Brython -->
+<script>
+window.onload=function(){
+      // 若你有特殊需求 debug 或指定 pythonpath 可以寫在引數中
+      brython({
+          debug:1, 
+          pythonpath:[
+              './../cmsimde/static/',
+              './../downloads/py/'
+          ]
+      });
+  }
+</script>
+<h3>w16_exam1</h3>
+<p><!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<!-- 導入 brython 程式庫 --></p>
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p><!-- 啟動 Brython --></p>
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<div><strong></strong></div>
+<div><strong>建立畫布</strong></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+  
+# 創建畫布
+def create_canvas():
+    # 創建一個500x500像素的畫布
+    canvas = html.CANVAS(width=500, height=500)
+    # 獲取ID為"brython_div1"的容器
+    brython_div = doc["brython_div1"]
+    # 將畫布添加到容器中
+    brython_div <= canvas
+    return canvas
+
+# 在畫布上繪圖
+def draw_shapes(canvas):
+    # 獲取2D繪圖上下文
+    ctx = canvas.getContext("2d")
+    # 設置所有圖形的線條寬度
+    ctx.lineWidth = 4
+
+    # 設置混合模式為"screen"，用於顏色混合
+    ctx.globalCompositeOperation = "screen"
+
+    # 黑色邊框的圓形（每個有四個部分）
+    ctx.strokeStyle = 'black'
+
+   # 藍色對角線
+    ctx.strokeStyle = 'blue'
+    ctx.beginPath()
+    ctx.moveTo(60, 60)  # 線條的起點
+    ctx.lineTo(260, 260)  # 線條的終點
+    ctx.stroke()
+
+
+
+# 主執行部分
+canvas = create_canvas()  # 創建畫布
+draw_shapes(canvas)  # 繪製所有圖形
+</script>
+</p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 4</h1>
+<h3>w16_exam2</h3><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -735,7 +818,7 @@ draw_circles()
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>Final Report</h1>
+<h3><span>w16_exam3</span></h3><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
