@@ -142,69 +142,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w16_exam1</h1>
-<p><!-- 導入 brython 程式庫 --></p>
-<p>
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-<!-- 導入 brython 程式庫 --></p>
-<p>
-<script src="/get_page/cmsimde/static/brython.js"></script>
-<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
-</p>
-<p><!-- 啟動 Brython --></p>
-<p>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-</script>
-</p>
-<div id="brython_div1"></div>
-<div><strong></strong></div>
-<div><strong>建立畫布</strong></div>
-<p>
-<script type="text/python3">
-from browser import html
-from browser import document as doc
-import math
-  
-# 創建畫布
-def create_canvas():
-    # 創建一個500x500像素的畫布
-    canvas = html.CANVAS(width=500, height=500)
-    # 獲取ID為"brython_div1"的容器
-    brython_div = doc["brython_div1"]
-    # 將畫布添加到容器中
-    brython_div <= canvas
-    return canvas
-
-# 在畫布上繪圖
-def draw_shapes(canvas):
-    # 獲取2D繪圖上下文
-    ctx = canvas.getContext("2d")
-    # 設置所有圖形的線條寬度
-    ctx.lineWidth = 4
-
-    # 設置混合模式為"screen"，用於顏色混合
-    ctx.globalCompositeOperation = "screen"
-
-    # 黑色邊框的圓形（每個有四個部分）
-    ctx.strokeStyle = 'black'
-
-   # 藍色對角線
-    ctx.strokeStyle = 'blue'
-    ctx.beginPath()
-    ctx.moveTo(60, 60)  # 線條的起點
-    ctx.lineTo(260, 260)  # 線條的終點
-    ctx.stroke()
-
-
-
-# 主執行部分
-canvas = create_canvas()  # 創建畫布
-draw_shapes(canvas)  # 繪製所有圖形
-</script>
-</p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
+<p><span style="color: #000000;"><a href="https://mdecp2024.github.io/hw-ruiyi512/content/Brython.html?src=https://gist.githubusercontent.com/ruiyi512/363ecdc1180b3fde45607fb50cecd24d/raw/409529a97cdbbe3023dc748aa322e21f90aa4837/w16_HW%25201%2520Exam" style="color: #000000;">w16_exam1</a></span></p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
         
     <!-- footer -->
       <div class="container">
