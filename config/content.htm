@@ -769,7 +769,8 @@ window.onload=function(){
 </ul>
 </li>
 </ul>
-<p></p><h1>HW 3</h1>
+<p></p>
+<h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
@@ -840,7 +841,8 @@ window.onload=function(){
 <p><strong>邏輯規劃：</strong> 將迷宮分段繪製，條理清晰，提升了程式設計的規劃能力。</p>
 </li>
 </ul>
-<p><span style="color: #000000;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/s5-nxBekECM" width="560"></iframe></span></p><h1>HW 4</h1>
+<p><span style="color: #000000;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/s5-nxBekECM" width="560"></iframe></span></p>
+<h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -871,7 +873,73 @@ window.onload=function(){
 </li>
 </ul>
 <p></p>
-<p><span style="color: #000000;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/9jIPRDF1wsQ" width="560"></iframe></span></p><h1>Final Report</h1>
+<p><span style="color: #000000;"><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/9jIPRDF1wsQ" width="560"></iframe></span></p>
+<h1>期末報告</h1>
+<p><span style="color: #000000;"><a href="https://docs.google.com/document/d/1BKtjcleHWal1P3UbSB4Ls2hyDMFmDiQf/edit?usp=sharing&amp;ouid=104362688980566650435&amp;rtpof=true&amp;sd=true" style="color: #000000;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">期末報告</span></span></a></span></p>
+<p><span style="color: #000000;"><a href="https://docs.google.com/document/d/1rQ7UIt1P1Ky31fq175PMAeSp_odfPVSU/edit?usp=sharing&amp;ouid=104362688980566650435&amp;rtpof=true&amp;sd=true" style="color: #000000;">筆記</a></span></p>
+<p><span style="color: #ff6600;">W7</span><br/>a = "我已經會寫簡單的Python程式了"<br/>for i in range(1,11);<br/> print(i,a)<br/>第一行<br/>1. 變數 a：<br/>I. a 是變數名稱，用來儲存資料。<br/>II. 在 Python 中，變數可以儲存任何資料類型（例如字串、數字、列表等）。<br/>2. 字串：<br/>I. "我已經會寫簡單的Python程式了" 是一個字串（String）。<br/>II. 字串是以雙引號 " 或單引號 ' 包裹的文字資料。<br/>3. 作用：<br/>I. 將這段文字儲存在變數 a 中，之後可以透過 a 來取用或操作這段文字。</p>
+<p>第二行<br/>1. 關鍵字 for<br/>* for 是用來啟動一個循環的關鍵字。<br/>* 它會依序迭代一個可迭代對象（例如列表、字串或範圍）。<br/>2. 變數 i<br/>* i 是迴圈變數，每次迴圈時都會被賦予新的值。<br/>* 在這段程式碼中，i 依次會取值 1 到 10（包含 1，但不包括 11）。<br/>3. 函數 range(1, 11)<br/>I. range() 函數生成一個範圍對象。<br/>II. 語法：range(start, stop, step)<br/>* start：起始值，這裡是 1。<br/>* stop：結束值（不包含該值），這裡是 11。<br/>* step（可選）：每次增量（預設為 1）。<br/>III. 因此，range(1, 11) 生成的值為：1, 2, 3, 4, 5, 6, 7, 8, 9, 10。<br/>4. 冒號 :<br/>I. 冒號用於結束 for 的語法並指示接下來是該迴圈內的程式塊。</p>
+<p>第三行<br/>1. 在程式中，print(i, a) 的作用是：<br/>I. print：Python 的內建函式，用於輸出文字、數值或變數的內容。<br/>II. i：迴圈變數，代表目前迴圈執行的數值（從 1 到 10）。<br/>III. ,（逗號）：在 print 中，逗號用於分隔多個項目，會在輸出時以空格分隔。<br/>IV. a：這是字串變數，內容是 "我已經會寫簡單的Python程式了"。<br/><span style="color: #ff6600;">W9</span><br/>w9_triangle_1<br/>n = 5 # 總共的行數<br/>space = '_'<br/>for i in range(n): # 對於每一行<br/> # 印出空格<br/> print(space * (n - i - 1), end='') # 在每行前面印出空格<br/> # 印出星號<br/> print('*' * (2 * i + 1)) # 每行印出 2*i + 1 個星號<br/>1. space = '_'<br/>I. 這行的意思是將字元 '_' 賦值給變數 space。<br/>II. 這表示每次需要"空格"（或這裡使用的底線 _）時，我們會用變數 space 來代表它。這樣，程式碼更容易改動。例如，若想要改成真正的空格，只需將 space = ' ' 即可。<br/>for i in range(n):<br/>I. 這是一個循環，執行 n 次，這裡 n = 5，所以 i 會依序取值為 0, 1, 2, 3, 4。<br/>2. space * (n - i - 1):<br/>I. 這表示用字元space（即'_'）重複 (n - i - 1) 次，生成一個空格的字串。<br/>II. n 是總行數，i 是當前的行號（從 0 開始）。<br/>III. (n - i - 1) 是計算該行需要的空格數，保證星號輸出是居中的。<br/>3. end='':<br/>I. 預設情況下，print() 在輸出後會自動換行。<br/>II. 使用 end=''，可以讓這部分的輸出不換行，這樣星號可以緊接著空格輸出在同一行。<br/>4. '*':<br/>I. 這是星號字元，用來組成三角形的內容。<br/>5. * (乘號運算符號):<br/>I. 這裡的 * 是字串重複運算符號，將 '*' 重複指定的次數。<br/>6. (2 * i + 1):<br/>I. 每行星號的個數計算公式。<br/>II. 當前的行數為 i（從 0 開始計算）。<br/>III. 對於行數 i：<br/>* 星號數量是 2 * i + 1，表示每行的星號數量隨行數增加。<br/>* 比如：<br/>* 第 0 行（i = 0）：2 * 0 + 1 = 1，印出 1 個星號。<br/>* 第 1 行（i = 1）：2 * 1 + 1 = 3，印出 3 個星號。<br/>* 第 2 行（i = 2）：2 * 2 + 1 = 5，印出 5 個星號。<br/>* 依此類推。</p>
+<p><br/>w9_triangle_2<br/>n = 5 # 定義金字塔的總行數，這裡我們用 n=5，表示金字塔共有 5 行<br/>space = '_'<br/># 第一部分：打印上半部 (包括中間行)<br/>for i in range(1, n + 1): # 從第1行到第n行，i代表行數<br/> # 這裡我們打印空格，讓星號可以靠右對齊<br/> # 空格數量是 (n - i)，因為第一行需要 4 個空格，第二行需要 3 個空格，以此類推<br/> print(space * (n - i), end='') # end='' 防止換行，讓星號和空格在同一行輸出</p>
+<p># 打印星號。每一行的星號數量是 i，從 1 開始逐行增加<br/> # 第一行 1 顆星，第二行 2 顆星，第三行 3 顆星...這樣增加<br/> print('*' * i) # 每行輸出 i 個星號</p>
+<p># 第二部分：打印下半部（去除中間行）<br/>for i in range(n - 1, 0, -1): # 這裡我們從 n-1 行開始，逐行減少星號數量<br/> # 空格的數量依然是 (n - i)，這是因為下半部的對稱性<br/> # 比如當 i=n-1 時，空格數量是 1，當 i=n-2 時，空格數量是 2<br/> print(space * (n - i), end='') # 同樣使用 end='' 來避免換行</p>
+<p># 打印星號數量為 i，從 n-1 開始逐行減少<br/> # 所以當 i = n-1 時，打印 n-1 顆星，當 i = n-2 時，打印 n-2 顆星，依此類推<br/> print('*' * i) # 每行輸出 i 顆星號<br/><span style="color: #ff6600;">W11</span><br/>11x11 的字元區域中, 以 "*" 字元列印出圓型區域. <br/># 定義區域大小<br/>width = 11<br/>height = 11</p>
+<p># 圓心位置<br/>center_x = width // 2 # 圓心 x 坐標，位於區域中間<br/>center_y = height // 2 # 圓心 y 坐標，位於區域中間</p>
+<p># 圓的半徑<br/>radius = 5</p>
+<p># 縱向縮放比例<br/>vertical_scale = 1 # 適當調整比例以接近圓形</p>
+<p># 遍歷字元區域<br/>for y in range(height): # 每一行<br/> for x in range(width): # 每一列<br/> # 計算每個點與圓心的距離（考慮縮放比例）<br/> dx = x - center_x<br/> dy = (y - center_y) * vertical_scale # 縱向乘以縮放比例<br/> # 判斷是否在圓內<br/> if dx ** 2 + dy ** 2 &lt;= radius ** 2:<br/> print("*", end="") # 圓內點用 "*" 表示<br/> else:<br/> print(" ", end="") # 圓外點用空格表示<br/> print() # 換行</p>
+<p>1. 定義區域大小<br/>I. 作用：定義文字區域的寬度和高度。<br/>* width：區域的總列數（水平寬度）。<br/>* height：區域的總行數（垂直高度）。<br/>II. 使用範例：<br/>* 當 width = 11 和 height = 11 時，文字區域是一個 11x11 的矩形。<br/>2. 計算圓心位置<br/>I. 作用：計算圓心在文字區域中的位置。<br/>* center_x：圓心的水平位置。<br/>* center_y：圓心的垂直位置。<br/>II. 計算方法：<br/>* 使用整數除法 //，將寬度或高度的一半作為圓心位置。<br/>* 例如：<br/>* 如果 width = 11，則 center_x = 11 // 2 = 5。<br/>* 如果 height = 11，則 center_y = 11 // 2 = 5。<br/>* 圓心位於區域的中心點 (5, 5)。<br/>3. 定義圓的半徑、縮放比例<br/>作用：<br/>I. radius：定義圓的半徑。<br/>* 半徑表示從圓心到圓周的距離。<br/>* 此處半徑為 5。<br/>II. vertical_scale：調整縱向縮放比例。<br/>* 值為 1 表示縱向比例與水平方向一致。<br/>* 可通過調整此值來壓縮或拉伸圓形。</p>
+<p>4. 繪製圓形<br/>I. 外層迴圈：遍歷每一行<br/>* for y in range(height): <br/>* 作用：<br/>* 逐行遍歷文字區域中的每一行。<br/>* y 代表當前行的索引（從 0 開始）。<br/>* 範圍為 0 ~ height-1（共 11 行）。<br/>II. 內層迴圈：遍歷每一列<br/>* for x in range(width):<br/>* 作用：<br/>* 在每行中，逐列遍歷文字區域中的每個點。<br/>* x 代表當前列的索引（從 0 開始）。<br/>* 範圍為 0 ~ width-1（共 11 列）。</p>
+<p>5. 計算點到圓心的距離<br/>I. 計算水平方向距離：<br/>* dx = x - center_x 表示該點與圓心在水平方向的距離。<br/>II. 計算垂直方向距離（考慮縮放）：<br/>* dy = (y - center_y) * vertical_scale 表示該點與圓心在垂直方向的距離。<br/>* 如果 vertical_scale = 1，則無縮放影響。</p>
+<p>6. 判斷是否在圓內<br/>I. 距離公式：dx ** 2 + dy ** 2 計算該點到圓心的平方距離。<br/>* 如果平方距離小於或等於半徑的平方，則點位於圓內。<br/>* 否則，點在圓外。<br/>II. 輸出字符：<br/>* 圓內的點輸出 *。<br/>* 圓外的點輸出空格。<br/>III. end="" 的作用：<br/>* 防止自動換行，確保每行的字符緊密排列。</p>
+<p>7. 每行結束後換行<br/>I. print(),作用：在每行的最後執行換行，使輸出結果呈現矩形區域。<br/>像素繪製圓形<br/>from browser import html<br/>from browser import document as doc</p>
+<p># 利用 html 建立 canvas 超文件物件<br/>canvas = html.CANVAS(width=400, height=400)<br/>brython_div = doc["brython_div1"]<br/>brython_div &lt;= canvas</p>
+<p># 每一格的 pixel 數<br/>gs = 20</p>
+<p># canvas 的上下文<br/>ctx = canvas.getContext("2d")</p>
+<p>def dRect(lux, luy, w, h, s=1, c="lightgrey"):<br/> """繪製網格框"""<br/> ctx.lineWidth = s<br/> ctx.strokeStyle = c<br/> ctx.beginPath()<br/> ctx.rect(lux, luy, w, h)<br/> ctx.stroke()</p>
+<p>def grid(width, height, grid_pix):<br/> """繪製網格"""<br/> for i in range(width):<br/> for j in range(height):<br/> dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")</p>
+<p>def fill(x, y, color):<br/> """填充顏色"""<br/> ctx.fillStyle = color<br/> ctx.fillRect(x * gs, y * gs, gs, gs)</p>
+<p># 繪製網格<br/>grid(11, 11, gs)</p>
+<p># 定義圓的參數<br/>width, height = 11, 11<br/>center_x, center_y = 5, 5 # 圓心座標（以網格單位表示）<br/>radius = 5 # 圓的半徑（以網格單位表示）</p>
+<p># 填充圓形內部區域<br/>for y in range(height):<br/> for x in range(width):<br/> # 計算點到圓心的距離<br/> distance = ((x - center_x) ** 2 + (y - center_y) ** 2) ** 0.5<br/> if distance &lt;= radius:<br/> fill(x, y, "black")<br/>1. 前置設定<br/>I. canvas 和 brython_div：<br/>* Canvas:是一個 HTML5 Canvas 元素，設定寬高為 400 像素。<br/>* brython_div:是網頁上的一個 &lt;div&gt; 元素（ID 為 brython_div1）。<br/>* 用 &lt;= 把 canvas 加入到 brython_div 中，使它顯示在網頁上。<br/>II. gs：<br/>* gs = 20<br/>* 定義每個網格的大小為 20 像素。<br/>* 例如，11x11 網格中，每個網格為 20x20 像素。<br/>III. ctx：<br/>* ctx = canvas.getContext("2d")<br/>* ctx 是 Canvas 的繪圖上下文，允許我們使用 2D 繪圖工具繪製圖形。<br/>2. 繪製函數<br/>dRect 函數：繪製單個網格框<br/>I. def dRect(lux, luy, w, h, s=1, c="lightgrey"):<br/>* lux 和 luy：<br/>* 表示矩形左上角的 x 和 y 座標（lux 是橫向，luy 是縱向）。<br/>* 例如，lux=0, luy=0 則表示矩形從 Canvas 的左上角開始畫。<br/>* w 和 h：<br/>* w 是矩形的寬度，h 是矩形的高度。<br/>* 例如，w=50, h=30 則表示畫出一個寬 50 像素、高 30 像素的矩形。<br/>* s（可選，預設值為 1）：<br/>* 表示矩形邊框的線條寬度。<br/>* 預設值為 1，若要更粗的邊框，可以設為更大的值，例如 s=2。<br/>* c（可選，預設值為 "lightgrey"）：<br/>* 表示矩形邊框的顏色。<br/>* 預設為淺灰色（"lightgrey"），但可以改為其他顏色，例如 "black"、"red"。<br/>II. ctx.lineWidth = s<br/>* 設定邊框的線條寬度為 s。<br/>* 例如，若 s=2，邊框的粗細會加倍。<br/>III. ctx.strokeStyle = c<br/>* 設定邊框的顏色為 c。<br/>* 例如，若 c="red"，矩形的邊框顏色會變成紅色。<br/>IV. ctx.beginPath()<br/>* 開始一個新的繪圖路徑，確保繪製的圖形不會影響其他圖形。<br/>V. ctx.rect(lux, luy, w, h)<br/>* 在 Canvas 上定義一個矩形的路徑。<br/>* (lux, luy) 為矩形的左上角，w 為寬度，h 為高度。<br/>VI. ctx.stroke()<br/>* 使用之前設定的線條樣式和顏色，繪製出矩形的邊框。<br/>grid 函數：繪製整體網格<br/>def grid(width, height, grid_pix):<br/>I. width：<br/>* 表示網格的列數（橫向）。<br/>* 例如，width=10 表示網格有 10 列。<br/>II. height：<br/>* 表示網格的行數（縱向）。<br/>* 例如，height=10 表示網格有 10 行。<br/>III. grid_pix：<br/>* 表示每個網格的邊長（像素大小）。<br/>* 例如，grid_pix=20 表示每個網格是 20x20 像素的正方形。<br/>外層迴圈：處理網格的列數（橫向）<br/>* for i in range(width):<br/>* 作用：遍歷每一列（橫向位置）。<br/>* 變數 i 為列的索引（從 0 開始）。<br/>內層迴圈：處理網格的行數（縱向）<br/>* for j in range(height):<br/>* 作用：遍歷每一行（縱向位置）。<br/>* 變數 j 為行的索引（從 0 開始）。<br/>呼叫 dRect 繪製單個網格框<br/>* dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")<br/>I. i * grid_pix 和 j * grid_pix：<br/>* 計算每個網格左上角的 x 和 y 座標：<br/>* x 座標：i * grid_pix（列索引乘以網格大小）。<br/>* y 座標：j * grid_pix（行索引乘以網格大小）。<br/>II. grid_pix, grid_pix：<br/>* 設定矩形的寬度與高度（每個網格都是正方形）。<br/>III. 1：<br/>* 邊框的線條寬度設為 1 像素。<br/>IV. "lightgrey"：<br/>* 邊框顏色設為淺灰色。</p>
+<p>fill 函數：填充指定網格<br/>fill 是一個用於填充指定網格單元的函數。該函數將在 Canvas 上的 (x, y) 格位置，繪製一個填滿顏色的矩形。<br/>x 和 y：<br/>* 這是目標網格的行列座標。<br/>* 例如，x = 3, y = 4 將會填充第 4 行、第 3 列的網格（以 0 為起始索引）。<br/>color：<br/>* 矩形填充的顏色，可以是任何有效的 CSS 顏色值（例如 "red", "#00FF00", "rgba(0, 0, 255, 0.5)" 等）。<br/>ctx.fillStyle = color<br/>* 使用 Canvas API 的 fillStyle 設置要繪製矩形的顏色。<br/>ctx.fillRect(x * gs, y * gs, gs, gs)<br/>* 使用 fillRect 方法在 Canvas 上繪製一個矩形：<br/>* x * gs 和 y * gs 是矩形的左上角座標。<br/>* gs 是每格的大小（20 像素），定義矩形的寬與高。</p>
+<p><br/>3. 主程式邏輯<br/>I. 繪製 11x11 網格<br/>* grid(11, 11, gs)<br/>* 呼叫 grid 函數繪製 11x11 的網格，每格大小為 20x20 像素。<br/>II. 圓形參數設定<br/>* center_x, center_y = 5, 5 # 圓心座標<br/>* radius = 5 # 圓的半徑<br/>* 圓心位置設為 (5, 5)（對應網格中心）。<br/>* 半徑設定為 5（以網格為單位）。<br/>III. 填充圓形內部區域<br/>for y in range(height):<br/> for x in range(width):<br/> distance = ((x - center_x) ** 2 + (y - center_y) ** 2) ** 0.5<br/> if distance &lt;= radius:<br/> fill(x, y, "black")<br/>* 遍歷網格的每個點 (x, y)。<br/>* 計算到圓心的距離：<br/>* 使用公式：<br/>* 判斷是否在圓內：<br/>* 若 distance &lt;= radius，填充該格為黑色。</p>
+<p></p>
+<p>w16_exam1題目要求:<br/>以自己的學號最後四碼作為繪圖的座標原點, , 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 , 並自選下列圖形的起始點座標, 直接在頁面畫出圖像。</p>
+<p>第一步驟:導入模組</p>
+<p>1.browser.html：是 Brython 提供的模組，允許我們在 Python 中創建和操作 HTML 元素。 2.browser.document：對應網頁的 DOM（Document Object Model），可以用來操作 HTML 結構，例如獲取、修改或新增元素。<br/>第二步驟:建立畫布</p>
+<p>1canvas = html.CANVAS(width=500, height=500)： 建立寬跟高的長度各為500像素的畫布。 2.brython_div = doc["brython_div1"]： 獲取網頁id="brython_div1" 的元素。 3.brython_div &lt;= canvas ： 將畫布加入到 brython_div1 中作為其子元素，&lt;= 是 Brython 特有的語法，表示「將右側元素添加到左側容器」。<br/>第三步驟:取得繪圖上下文</p>
+<p>getContext("2d") 1.為畫布建立 2D 繪圖上下文（2D rendering context）。 2.允許我們繪製線條、矩形、圓形等圖形。 3.繪圖上下文 (ctx) 是一個接口，包含所有的繪圖方法和屬性。<br/>第四步驟:畫出X座標線</p>
+<p>1.ctx.beginPath() 開始一條新的繪圖路徑，清除之前的路徑狀態。 2.ctx.strokeStyle = 'black' 設定線條顏色為黑色。 3.ctx.lineWidth = 2 設定線條的寬度為 2 像素。 4.ctx.moveTo(31, 45) 移動畫筆到座標 (31, 45)，不畫線。 5.ctx.lineTo(400, 45) 從 (31, 45) 畫一條直線到 (400, 45)。 6.ctx.stroke() 繪製路徑，使線條顯示在畫布上。<br/>第五步驟:標示X軸方向</p>
+<p>1.ctx.font = "14px Arial" 設定文字的字體和大小為 14px Arial。 2.ctx.fillStyle = "black" 設定文字顏色為黑色。 3.ctx.fillText("X+", 410, 50) 在座標 (410, 50) 的位置繪製文字 "X+"，用來標示 X 軸的正方向。<br/>第六步驟:繪製 Y 軸座標線</p>
+<p>1.ctx.beginPath() 開啟新路徑，準備繪製 Y 軸。 2.ctx.moveTo(31, 45) 將畫筆移動到 (31, 45)。 3.ctx.lineTo(31, 400) 繪製一條從 (31, 45) 到 (31, 400) 的垂直線。 4.ctx.stroke() 顯示 Y 軸。<br/>第七步驟:標示 Y 軸方向與原點</p>
+<p>1.ctx.fillText("Y+", 10, 410) 在座標 (10, 410) 標示文字 "Y+"，表示 Y 軸的正方向。 2.ctx.font = "12px Arial" 將字體大小改為 12px，用於標示原點座標。 3.ctx.fillText("(31, 45)", 35, 35) 在 (35, 35) 標示文字 "(31, 45)"，表示原點座標。<br/>第八步驟:定義偏移基準點</p>
+<p>1.定義偏移量，設定繪圖的基準點為 (31, 45)，後續所有圖形的座標都以這個基準點進行計算。<br/>第九步驟:繪製橙色六邊形</p>
+<p></p>
+<p>1.開始新路徑，設定填充顏色為橙色 #F47920。 2.定義六個頂點： 頂點座標是基於 offset_x 和 offset_y 計算的。 3.ctx.closePath() 自動將最後一個頂點與第一個頂點連接，形成封閉路徑。 4.ctx.fill() 填滿六邊形內部。<br/>繪製其他圖形<br/>類似於六邊形的步驟，透過 beginPath() 定義形狀，使用 moveTo() 和 lineTo() 繪製邊，最後用 fill() 填充顏色： 1.綠色菱形 四個頂點構成的封閉形狀，顏色為 #009F95。 2.藍色三角形 三個頂點構成的封閉形狀，顏色為 #40B4CB。 3.粉紅色圓形 使用 arc() 繪製一個圓心為 (offset_x + 220, offset_y + 63)、半徑為 20 的圓形。 4.黃色正方形 使用 rect() 在指定位置繪製一個 40x40 的正方形，顏色為 #FDD56A。 5.藍色矩形 使用 rect() 繪製一個 60x20 的矩形，顏色為 #003A70。<br/>程式輸出結果</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>w16_exam2題目要求<br/>以自己的學號最後四碼作為下列繪圖的左上方點座標, 並以紅色文字標示出該點座標 。 利用 pixel=2 的藍色直線, 自訂迷宮畫布大小, 直接在頁面畫出下列圖像,可以在各自的 Brython 頁面中繪出下列圖像。</p>
+<p>第一步驟:導入模組</p>
+<p>1.browser.html：是 Brython 提供的模組，允許我們在 Python 中創建和操作 HTML 元素。 2.browser.document：對應網頁的 DOM（Document Object Model），可以用來操作 HTML 結構，例如獲取、修改或新增元素。<br/>第二步驟:建立畫布</p>
+<p>canvas = html.CANVAS(width=300, height=300)： 建立寬跟高的長度各為300像素的畫布。 brython_div = doc["brython_div1"]： 獲取網頁id="brython_div1" 的元素。 brython_div &lt;= canvas ： 將畫布加入到 brython_div1 中作為其子元素，&lt;= 是 Brython 特有的語法，表示「將右側元素添加到左側容器」。<br/>第三步驟:取得繪圖上下文</p>
+<p>getContext("2d") 1.為畫布建立 2D 繪圖上下文（2D rendering context）。 2.允許我們繪製線條、矩形、圓形等圖形。 3.繪圖上下文 (ctx) 是一個接口，包含所有的繪圖方法和屬性。<br/>第四步驟:標示座標</p>
+<p>ctx.font = "12px Arial" 文字大小為12pixel，字體為 "Arial" ctx.fillStyle = "red" 將字體顏色改為紅色 ctx.fillText("(31, 47)", 35, 40) 將"(31,47)"這行文字定位在(35,40)上<br/>第五步驟:定義線條屬性</p>
+<p>ctx.strokeStyle = "blue" 設定線的顏色為藍色 ctx.lineWidth = 2 設定繪製線條的寬度為2<br/>第六步驟:開始繪製迷宮</p>
+<p>offset_x= 31 X開頭偏移至(31,0) offset_y= 47 Y開頭偏移至(0,47)</p>
+<p>ctx.beginPath() 清空當前路徑的狀態，開始新的繪圖操作 ctx.moveTo() 設定()為起點 ctx.lineTo() 畫一條線到()指定的點 (offset_x +@,offset_y+&amp;) 指定x偏移到@位置 指定y偏移到&amp;位置 (以下皆為相同) ctx.stroke() 繪製以上的線</p>
+<p></p>
+<p></p>
+<p><br/>程式輸出結果</p>
+<p>w16_exam3題目要求<br/>以自己的學號最後四碼作為下列繪圖的左上方點座標, 並以紅色文字標示出該點座標 。 利用 pixel=2 的藍色直線, 自訂迷宮畫布大小, 直接在頁面畫出下列圖像,並利用紅色連續線段標示從上方入口。(註: 由於exam3跟exam2雷同，故不重複操作， 只操作紅線畫出出口線)</p>
+<p></p>
+<p><br/>ctx.strokeStyle = "red" 設定線的顏色為"紅色" ctx.lineWidth = 2 設定繪製線條的寬度為2 ctx.beginPath() 清空當前路徑的狀態，開始新的繪圖操作 ctx.moveTo() 設定()為起點 ctx.lineTo() 畫一條線到()指定的點 (offset_x +@,offset_y+&amp;) 指定x偏移到@位置 指定y偏移到&amp;位置 (以下皆為相同) ctx.stroke() 繪製以上的線<br/>w16_exam3成品</p>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span></p><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
